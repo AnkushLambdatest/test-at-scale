@@ -1,0 +1,23 @@
+---
+framework: golang
+blocklist:
+  - "/home/nucleus/repo/pkg/blocktestservice/setup_test.go##TestTestBlockListService_GetBlockListedTests"
+  - "/home/nucleus/repo/pkg/runner/docker/docker_test.go##TestDockerDestroyWithRunningWithAutoRemove"
+  - "/home/nucleus/repo/pkg/runner/docker/docker_test.go##TestDockerPullAlways"
+  - "/home/nucleus/repo/pkg/runner/docker/docker_test.go##TestDockerWaitCompletion"
+  - "/home/nucleus/repo/pkg/runner/docker/docker_test.go##TestDockerRun"
+  - "/home/nucleus/repo/pkg/runner/docker/docker_test.go##TestDockerPullNever"
+  - "/home/nucleus/repo/pkg/gitmanager/setup_test.go##TestClone"
+  
+preRun:
+  command:
+    - "go mod init"
+    - "go mod tidy"
+    - "go get -d ./..."
+
+postMerge:
+  # THIRDLY - You need to set postMerge patterns.
+  # These would be the glob patterns for the test cases that you want to execute in the post-merge jobs. A postMerge test execution job is initiated whenever a PR is merged into a branch.
+  pattern:
+    # glob-patterns to discover tests to run in case of postMerge.
+    - ""
