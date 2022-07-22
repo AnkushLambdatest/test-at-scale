@@ -1,13 +1,19 @@
 ---
 framework: golang
-# blocklist:
-#   - "/home/nucleus/repo/pkg/blocktestservice/setup_test.go##TestTestBlockListService_GetBlockListedTests"
-#   - "/home/nucleus/repo/pkg/runner/docker/docker_test.go##TestDockerDestroyWithRunningWithAutoRemove"
-#   - "/home/nucleus/repo/pkg/runner/docker/docker_test.go##TestDockerPullAlways"
-#   - "/home/nucleus/repo/pkg/runner/docker/docker_test.go##TestDockerWaitCompletion"
-#   - "/home/nucleus/repo/pkg/runner/docker/docker_test.go##TestDockerRun"
-#   - "/home/nucleus/repo/pkg/runner/docker/docker_test.go##TestDockerPullNever"
-#   - "/home/nucleus/repo/pkg/gitmanager/setup_test.go##TestClone"
+blocklist:
+  - "/home/nucleus/repo/pkg/runner/docker/docker_test.go##TestDockerDestroyWithRunningWithAutoRemove"
+  - "/home/nucleus/repo/pkg/runner/docker/docker_test.go##TestDockerPullAlways"
+  - "/home/nucleus/repo/pkg/runner/docker/docker_test.go##TestDockerWaitCompletion"
+  - "/home/nucleus/repo/pkg/runner/docker/docker_test.go##TestDockerRun"
+  - "/home/nucleus/repo/pkg/runner/docker/docker_test.go##TestDockerPullNever"
+  - "/home/nucleus/repo/pkg/gitmanager/setup_test.go##TestClone"
+  - "/home/nucleus/repo/pkg/runner/docker/docker_test.go##TestDockerDestroyWithRunningWoAutoRemove"
+  - "/home/nucleus/repo/pkg/runner/docker/docker_test.go##TestDockerDestroyWithoutRunning"
+  - "/home/nucleus/repo/pkg/runner/docker/docker_test.go##TestDockerDestroyWithRunningWithAutoRemove"
+  - "/home/nucleus/repo/pkg/runner/docker/docker_test.go##TestDockerCreate"
+  - "/home/nucleus/repo/pkg/secrets/setup_test.go##TestMain"
+  - "/home/nucleus/repo/pkg/runner/docker/setup_test.go##TestMain"
+  - "/home/nucleus/repo/pkg/runner/docker/setup_test.go##TestDockerVolumes"
   
 preRun:
   command:
